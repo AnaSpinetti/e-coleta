@@ -1,7 +1,7 @@
 # E-coleta
 Projeto criado em acompanhamento com a Next Level Week da Rocketseat.
 
-** Tecnologias utilizadas: **
+**Tecnologias utilizadas:**
 
 - HTML
 - CSS
