@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% set pageId = "page-search-results" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/search-results.css">
+{% endblock styles %}
+
+{% block tittle %}
+    <title>Resultado da Pesquisa</title>
+{% endblock tittle %}
+
+{% block content %}
+    <!--Header-->
+    {% include "partials/page-header.html" %}
+
+    <main>
+        {% if total > 0 %}
+        <h4>
+            <strong>{{ total }} ponto(s)
+            </strong>encontrados
+        </h4>
+
+        <div class="cards">
+
+            {% for place in places %}
+
+                <div class="card">
+                    <img src="{{ place.image }}" alt="{{ place.name }}">
+                    <h1>{{ place.name }}</h1>
+                    <h3>{{ place.items }}</h3>
+                    <p>{{ place.city }}, {{ place.state }}
+                        <br>
+                        {{ place.address }}
+                        <br>
+                        {{ place.address2 }}
+                    </p>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+      {% if total == 0 %}
+      
+            <h4><strong>Nenhum</strong> ponto localizado</h4>
+        
+            <div id="tryAgain">
+                
+                <a href="# ">
+                    <span></span>
+                </a>
+            </div>
+        {% endif %}
+    </main>
+
+
+{% endblock content %}
+
+     {% block modal %}
+        <!-- Modal -->
+        {% include "partials/modal2.html" %}
+    {% endblock modal %}
+
+    {% block scripts %}
+        <script src="/scripts/modalsearch.js"></script>
+    {% endblock scripts %}

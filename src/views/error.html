@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/modal.css">
+{% endblock styles %}
+
+{% block tittle %}
+    <title>E-Coleta - Erro</title>
+{% endblock tittle %}
+{% block content %}
+<div id="modal" class="modalCadastro">
+    <div class="content">
+        <div class="header">
+            <img src="/images/sad.png" alt="Ocorreu um erro">
+        </div>
+
+       <div><h2>Ocorreu um erro, tente novamente!</h2>
+            <p>Você será redirecionado em alguns segundos</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    setTimeout(() => {window.location = "/cadastro"
+    }, 7000)
+</script>
+
+{% endblock content %}
